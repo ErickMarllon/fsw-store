@@ -9,14 +9,12 @@ const ProductList = ({ products }: ProductListProps) => {
   return (
     <div className="  flex w-full gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
       {products &&
-        products
-          .filter((_, index) => index !== 4)
-          .map((product) => (
-            <ProductItem
-              key={product.id}
-              product={computeProductTotalPrice(product)}
-            />
-          ))}
+        products.map((product) => (
+          <ProductItem
+            key={product.id}
+            product={computeProductTotalPrice(product)}
+          />
+        ))}
     </div>
   );
 };
