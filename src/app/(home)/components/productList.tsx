@@ -7,7 +7,7 @@ interface ProductListProps {
 }
 const ProductList = ({ products }: ProductListProps) => {
   return (
-    <div className=" mt-8 flex w-full gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+    <div className="  flex w-full gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
       {products &&
         products
           .filter((_, index) => index !== 4)
