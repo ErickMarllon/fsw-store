@@ -35,6 +35,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
               height={0}
               className="h-auto max-h-[70%] w-auto max-w-[80%]"
               sizes="100vw"
+              quality={100}
               priority
               onError={handleImageError}
             />
@@ -48,13 +49,13 @@ const ProductItem = ({ product }: ProductItemProps) => {
 
           <div className="max-w-[150px]  overflow-hidden text-ellipsis whitespace-nowrap">
             <p className=" w-full  text-sm">{product.name}</p>
-            <div className="flex items-center justify-start gap-2">
+            <div className="flex items-center justify-start gap-2 text-[.8em]">
               {product.discountPercentage > 0 && (
                 <p className="font-semibold">
                   R$ {formatNumber(product.discountPrice)}
                 </p>
               )}
-              <p className=" text-xs line-through opacity-75">
+              <p className=" text-[0.70rem] line-through opacity-75">
                 R$ {formatNumber(product.basePrice)}
               </p>
             </div>
