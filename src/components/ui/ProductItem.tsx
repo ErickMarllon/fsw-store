@@ -16,11 +16,18 @@ const ProductItem = ({ product }: ProductItemProps) => {
     setImageError(true);
   };
 
+  const formatNumber = (number: number): string => {
+    return number.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
+
   return (
     <>
       {!imageError ? (
         <div className="flex flex-col gap-4">
-          <div className="bg-accent  relative flex h-[170px] w-[150px] items-center justify-center rounded-lg">
+          <div className="relative  flex h-[170px] w-[150px] items-center justify-center rounded-lg bg-accent">
             <Image
               src={product.imageUrls[0]}
               alt={product.name}
@@ -42,18 +49,14 @@ const ProductItem = ({ product }: ProductItemProps) => {
           <div className="max-w-[150px]  overflow-hidden text-ellipsis whitespace-nowrap">
             <p className=" w-full  text-sm">{product.name}</p>
             <div className="flex items-center justify-start gap-2">
-              {product.discountPercentage > 0 ? (
-                <>
-                  <p className="font-semibold">R$ {product.totalPrice}</p>
-                  <p className=" text-xs line-through opacity-75">
-                    R$ {product.formattedBasePrice}
-                  </p>
-                </>
-              ) : (
-                <p className=" text-xs line-through opacity-75">
-                  R$ {product.formattedBasePrice}
+              {product.discountPercentage > 0 && (
+                <p className="font-semibold">
+                  R$ {formatNumber(product.discountPrice)}
                 </p>
               )}
+              <p className=" text-xs line-through opacity-75">
+                R$ {formatNumber(product.basePrice)}
+              </p>
             </div>
           </div>
         </div>
