@@ -27,7 +27,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
     <>
       {!imageError ? (
         <div className="flex flex-col gap-4">
-          <div className="relative  flex h-[170px] w-[150px] items-center justify-center rounded-lg bg-accent">
+          <div className="relative  flex h-[170px] w-[200px] items-center justify-center rounded-lg bg-accent">
             <Image
               src={product.imageUrls[0]}
               alt={product.name}
