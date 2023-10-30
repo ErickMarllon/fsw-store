@@ -1,4 +1,4 @@
-import ProductList from "@/components/ui/productList";
+import ProductList from "@/components/ProductList/productList";
 import SectionTitle from "@/components/ui/section-title";
 import { prismaClient } from "@/lib/prisma";
 import Categories from "./components/categories";

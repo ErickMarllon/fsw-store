@@ -11,17 +11,17 @@ import {
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
-import { Button } from "./button";
-import { Card } from "./card";
-import { Separator } from "./separator";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Button } from "../ui/button";
+import { Card } from "../ui/card";
+import { Separator } from "../ui/separator";
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetHeader,
   SheetTrigger,
-} from "./sheet";
+} from "../ui/sheet";
 const Header = () => {
   const { status, data } = useSession();
 
