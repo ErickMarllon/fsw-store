@@ -1,10 +1,6 @@
-import { Category } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
-
-interface CategoryItemProps {
-  category: Category;
-}
+import { CategoryItemProps } from "./category.interface";
 
 const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
