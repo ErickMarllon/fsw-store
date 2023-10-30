@@ -1,10 +1,7 @@
 import { CATEGORY_ICON } from "@/app/constants/categoryIcon";
 import { Badge } from "@/components/ui/badge";
-import { Category } from "@prisma/client";
 import Link from "next/link";
-interface CategoryItemProps {
-  category: Category;
-}
+import { CategoryItemProps } from "./category.interface";
 
 const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
