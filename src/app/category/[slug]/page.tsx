@@ -1,10 +1,11 @@
-import ProductItem from "@/components/ui/ProductItem";
+import { computeProductTotalPrice } from "@/app/helpers/computeProductTotalPrice";
+import ProductItem from "@/components/productItem/ProductItem";
 import { Badge } from "@/components/ui/badge";
-import { computeProductTotalPrice } from "@/helpers/computeProductTotalPrice";
 import { prismaClient } from "@/lib/prisma";
 import { CATEGORY_ICON } from "../../constants/categoryIcon";
+import { CategoryProductsProps } from "./category.interface";
 
-const CategoryProducts = async ({ params }: any) => {
+const CategoryProducts = async ({ params }: CategoryProductsProps) => {
   const category = await prismaClient.category.findFirst({
     where: {
       slug: params.slug,
